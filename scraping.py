@@ -39,4 +39,8 @@ def get_selections(url):
     raw_html = simple_get(url)
     html = BeautifulSoup(raw_html, 'html.parser')
     songs = html.select('.article-detail h3')
-    return songs
+    songs = list(songs)
+    songs_as_strings = []
+    for song in songs:
+        songs_as_strings.append(song.string.extract())
+    return songs_as_strings
