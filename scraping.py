@@ -35,12 +35,29 @@ def log_error(e):
     """
     print(e)
 
+
 def get_selections(url):
     raw_html = simple_get(url)
     html = BeautifulSoup(raw_html, 'html.parser')
-    songs = html.select('.article-detail h3')
+    songs = html.select('.article-detial h3')
     songs = list(songs)
     songs_as_strings = []
     for song in songs:
         songs_as_strings.append(song.string.extract())
     return songs_as_strings
+
+def put_to_file(items):
+    file = open("list.txt", "w")
+    for item in items:
+        file.write(item)
+
+# url = input('enter the url you want to get: ')
+# list_of_songs = get_selections(url)
+# put_to_tile(list_of_songs)
+#
+#
+
+url = input('enter the url you want to get: ')
+list_of_songs = get_selections(url)
+for song in list_of_songs:
+    print(song)
