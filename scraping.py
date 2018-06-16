@@ -2,6 +2,24 @@ from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
+import scrapy
+
+"""
+class BlogSpider(scrapy.Spider):
+    name = 'blogspider'
+    start_urls = ['https://blog.scrapinghub.com']
+
+    def parse(self, response):
+        for title in response.css('h2.entry-title'):
+            yield {'title': title.css('a ::text').extract_first()}
+
+        for next_page in response.css('div.prev-post > a'):
+            yield response.follow(next_page, self.parse)
+EOF
+ scrapy runspider myspider.py
+ 
+  """
+
 
 def simple_get(url):
     """
