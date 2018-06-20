@@ -4,29 +4,28 @@ from contextlib import closing
 from bs4 import BeautifulSoup
 import scrapy
 
-"""
-class BlogSpider(scrapy.Spider):
-    name = 'blogspider'
-    start_urls = ['https://blog.scrapinghub.com']
+class NCSSpider(scrapy.Spider):
+    """A Scrapy spider for No Clean Singing"""
+    name = 'NCS'
+
+    start_urls = [
+        'https://www.nocleansinging.com/',
+    ]
 
     def parse(self, response):
-        for title in response.css('h2.entry-title'):
-            yield {'title': title.css('a ::text').extract_first()}
+        self.log('GETTING URL: %s'% response.url)
 
-        for next_page in response.css('div.prev-post > a'):
-            yield response.follow(next_page, self.parse)
-EOF
- scrapy runspider myspider.py
- 
-  """
+class Page(scrapy.Item):
+    description = scrapy.Field()
 
 
+"""  
 def simple_get(url):
-    """
+    
     Attempts to get the content at `url` by making an HTTP GET request.
     If the content-type of response is some kind of HTML/XML, return the
     text content, otherwise return None
-    """
+    
     try:
         with closing(get(url, stream=True)) as resp:
             if is_good_response(resp):
@@ -38,19 +37,19 @@ def simple_get(url):
         return None
 
 def is_good_response(resp):
-    """
+    
     Returns true if the response seems to be HTML, false otherwise
-    """
+    
     content_type = resp.headers['Content-Type'].lower()
     return (resp.status_code == 200
             and content_type is not None
             and content_type.find('html') > -1)
 
 def log_error(e):
-    """
+    
     It is always a good idea to log errors.
     This function just prints them, but you can make it do anything
-    """
+    
     print(e)
 
 
@@ -79,3 +78,5 @@ url = input('enter the url you want to get: ')
 list_of_songs = get_selections(url)
 for song in list_of_songs:
     print(song)
+    
+"""
