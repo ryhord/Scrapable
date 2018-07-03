@@ -2,25 +2,7 @@ from requests import get
 from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
-""" 
-import scrapy
 
-class NCSSpider(scrapy.Spider):
-    A Scrapy spider for No Clean Singing
-    name = 'NCS'
-
-    start_urls = [
-        'http://www.metalinjection.net/lists/our-picks-for-the-top-metal-albums-of-2018-so-far/2',
-    ]
-
-    def parse(self, response):
-        self.log('GETTING URL: %s'% response.url)
-
-class Page(scrapy.Item):
-    description = scrapy.Field()
-
-
-"""  
 def simple_get(url):
     """    Attempts to get the content at `url` by making an HTTP GET request.
     If the content-type of response is some kind of HTML/XML, return the
