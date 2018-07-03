@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/web-scraping.iml" filepath="$PROJECT_DIR$/.idea/web-scraping.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/python-web-scraper.iml" filepath="$PROJECT_DIR$/.idea/python-web-scraper.iml" />
+>>>>>>> c521e71339982e32674622e4ae9c17607ecb5922
     </modules>
   </component>
 </project>
