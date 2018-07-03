@@ -3,6 +3,7 @@ from requests.exceptions import RequestException
 from contextlib import closing
 from bs4 import BeautifulSoup
 
+
 def simple_get(url):
     """    Attempts to get the content at `url` by making an HTTP GET request.
     If the content-type of response is some kind of HTML/XML, return the
@@ -17,6 +18,7 @@ def simple_get(url):
         log_error('Error during request to {0} : {1}'.format(url, str(e)))
         return None
 
+
 def is_good_response(resp):
     """
     Returns True if the response seems to be HTML, False otherwise.
@@ -25,6 +27,7 @@ def is_good_response(resp):
     return (resp.status_code == 200
             and content_type is not None
             and content_type.find('html') > -1)
+
 
 def log_error(e):
     """    It is always a good idea to log errors.
@@ -46,6 +49,7 @@ def get_selections(url, selection):
     """
     return songs
 
+
 def put_to_file(items):
     file = open("list.txt", "w")
     for item in items:
@@ -56,6 +60,7 @@ def put_to_file(items):
 # put_to_tile(list_of_songs)
 #
 #
+
 
 def get_names(url, selector):
     """
@@ -76,8 +81,12 @@ def get_names(url, selector):
     # Raise an exception if we failed to get any data from the url
     raise Exception('Error retrieving contents at {}'.format(url))
 
+"""
+
+
 url = input('enter the url you want to get: ')
 selection = input("What's the selector of the content you want?")
 list_of_songs = get_names(url, selection)
 for song in list_of_songs:
     print(song)
+"""
