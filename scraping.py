@@ -81,9 +81,9 @@ def get_names(url, selector):
     # Raise an exception if we failed to get any data from the url
     raise Exception('Error retrieving contents at {}'.format(url))
 
-"""
 
 
+"""  
 url = input('enter the url you want to get: ')
 selection = input("What's the selector of the content you want?")
 list_of_songs = get_names(url, selection)

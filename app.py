@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 import scraping
 
 app = Flask(__name__)
@@ -7,12 +7,26 @@ DEBUG = True
 PORT = 8000
 HOST = '0.0.0.0'
 
-app = Flask(__name__)
 
-
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('index.html')
+    if request.method == 'GET':
+        return render_template('index.html')
+    if request.method == 'POST':
+        print(request.form)
+        print(request.form['url'])
+        print(request.form['selector'])
+        return results(request.form['url'], request.form['selector'])
+
+    """redirect(url_for('results', url=request.form['url'], selection=request.form['selection']))"""
+
+
+@app.route("/results/", methods=['GET'])
+def results(url, selection):
+    list_of_results = scraping.get_names(url, selection)
+    for result in list_of_results:
+        print(result)
+    return render_template('results.html', list_of_results=list_of_results)
 
 
 if __name__ == '__main__':
