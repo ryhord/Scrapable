@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Results</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block title %}Results{% end block %}
+{% block content %}
     <h1>Here are your results</h1>
     <ul>
     {% for result in list_of_results %}
         <li>{{ result }}</li>
     {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

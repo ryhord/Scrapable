@@ -23,6 +23,7 @@ def home():
     """redirect(url_for('results', url=request.form['url'], selection=request.form['selection']))"""
     """results(request.form['url'], request.form['selector'])"""
 
+
 @app.route("/results", methods=['GET'])
 def results():
     url = request.args['url']
