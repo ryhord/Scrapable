@@ -18,7 +18,7 @@ def home():
         print(request.form['selector'])
         url = request.form['url']
         selection = request.form['selector']
-        return redirect(url_for('results', url=url, selection=selection ))
+        return redirect(url_for('results', url=url, selection=selection))
 
     """redirect(url_for('results', url=request.form['url'], selection=request.form['selection']))"""
     """results(request.form['url'], request.form['selector'])"""
