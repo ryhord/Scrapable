@@ -1,6 +1,16 @@
 {% extends "layout.html" %}
-{% block title %}Results{% end block %}
+{% block title %}Results{% endblock %}
 {% block content %}
+    <form action ="http://127.0.0.1:5000/results" method="GET">
+        <h3>Enter the url of the site you want to scrape</h3>
+        <input type="text" name="url">
+        <h3>Enter the HTML tag or CSS selector of the kind of element you would like to scrape</h3>
+        <input type="text" name="selector">
+        <br>
+        <br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
     <h1>Here are your results</h1>
     <ul>
     {% for result in list_of_results %}
