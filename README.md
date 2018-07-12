@@ -1,11 +1,11 @@
-#Web Scraping
+# Web Scraping
 
 This application's end goal is to make scraping information from sites much easier.
 
 Currently, the application is built as a Flask web app. Future plans include creating
 a Chrome extension that will feed user input to the web app.
 
-##Interface
+## Interface
 
 The app's interface is fairly straight forward. On the user input screen, enter
 the url of the page you would like to extract data from. In the second field,
