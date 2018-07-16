@@ -1,4 +1,3 @@
-[packages]
 requests = "*"
 requests.exceptions = "*"
 contextlib = "*"
