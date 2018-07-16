@@ -28,4 +28,5 @@ def results():
 
 
 if __name__ == '__main__':
-    app.run(debug=DEBUG, host=HOST, port=PORT)
+    app.run(debug=True, use_reloader=True)
+    #app.run(debug=DEBUG, host=HOST, port=PORT)
