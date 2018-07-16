@@ -1,8 +1,0 @@
-requests=="*"
-requests.exceptions=="*"
-contextlib=="*"
-bs4=="*"
-flask=="*"
-
-[requires]
-python_version=="3.6.5"
