@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
+
 import scraping
 
 app = Flask(__name__)
@@ -26,6 +27,13 @@ def results():
         print(result)
     return render_template('results.html', list_of_results=list_of_results)
 
+
+@app.route("/results/api", methods=['GET'])
+def results():
+    url = request.args['url']
+    selector = request.args['selector']
+    list_of_results = scraping.get_names(url, selector)
+    return jsonify(list_of_results)
 
 
 if __name__ == '__main__':
