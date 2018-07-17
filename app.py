@@ -27,6 +27,7 @@ def results():
     return render_template('results.html', list_of_results=list_of_results)
 
 
+
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)
     #app.run(debug=DEBUG, host=HOST, port=PORT)
