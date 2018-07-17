@@ -29,7 +29,7 @@ def results():
 
 
 @app.route("/results/api", methods=['GET'])
-def results():
+def api():
     url = request.args['url']
     selector = request.args['selector']
     list_of_results = scraping.get_names(url, selector)
