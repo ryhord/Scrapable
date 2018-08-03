@@ -9,7 +9,13 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
   font-family: 'Lato', sans-serif;
+
 }
 *{
 font-family: 'Lato', sans-serif;
+text-align: center;
+}
+
+#results-list{
+    list-style: none;
 }
